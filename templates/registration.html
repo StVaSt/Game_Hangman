@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="content">
+        <h1>Добавить нового пользователя</h1>
+            <div class="error"> {{error}} </div>
+            <div class="buttons">
+                <form action="/new_users" method="POST">
+                    <label for="login">Логин:</label>
+                    <input type="text" id="login" name="login" required>
+                    <br><br>
+                    <small class="hint">Логин должен быть от 5 до 15 символов.</small>
+                    <br><br>
+                    <label for="pass">Пароль:</label>
+                    <input type="password" id="pass" name="pass" required>
+                    <br><br>
+                    <small class="hint">Пароль должен быть от 5 до 10 символов и должен состоять из цифр и латинских букв.</small>
+                    <br><br>
+                    <button type="submit">Добавить пользователя</button>
+                </form>
+            </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление слова</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="content">
+        <h1>Добавить новое слово</h1>
+            <div class="error"> {{error}} </div>
+            <div class="buttons">
+                <form action="/new_word" method="POST">
+                    <label for="word">Слово:</label>
+                    <input type="text" id="word" name="word" required>
+                    <br><br>
+                    <small class="hint">Слово должно быть от 5 до 15 символов.</small>
+                    <br><br>
+                    <label for="description">Пояснение:</label>
+                    <textarea type="text" id="description" name="description" required></textarea>
+                    <br><br>
+                    <small class="hint">Краткое, но емкое описания слова.</small>
+                    <br><br>
+                <button type="submit">Добавить слово</button>
+                </form>
+            </div>
+    </div>
+</body>
+</html>

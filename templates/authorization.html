@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Авторизация</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="content">
+        <h1>Авторизация</h1>
+            <div class="error"> {{error}} </div>
+            <div class="buttons">
+                <form action="/login_users" method="POST">
+                    <label for="login">Логин:</label>
+                    <input type="text" id="login" name="login" required>
+                    <br><br>
+                    <label for="pass">Пароль:</label>
+                    <input type="password" id="pass" name="pass" required>
+                    <br><br>
+                    <button type="submit">Залогиниться</button>
+                </form>
+            </div>
+    </div>
+</body>
+</html>

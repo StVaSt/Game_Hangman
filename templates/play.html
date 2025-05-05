@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Игра идет...</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="content">
+        <h2>Игра началась... {{authorized_user}}</h2>
+        <p>Загаданное слово имеет {{count_letter}} букв</p>
+        <p class="empty_element">{{empty_element}}</p>
+        <p>{{description}}</p>
+        <p>Это слово имеет статистику выигрыш/проигрыш - {{count_win}}/{{count_loss}}</p>
+        <img src="{{image_num}}">
+        <h2>Выберите букву:</h2>
+        <form action="/guess" method="POST">
+            <div id="alphabet">
+                {% for letter in 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ' %}
+                    {% if letter in session.get('used_letters', []) %}
+                        <button type="button" class="letter used" disabled>{{ letter }}</button>
+                    {% else %}
+                        <button type="submit" name="letter" value="{{ letter }}" class="letter">{{ letter }}</button>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </form>
+    </div>
+</body>
+</html>

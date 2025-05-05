@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Успешная авторизация</title>
+    <link rel="stylesheet" href="static/style.css">
+    <script>
+        function redirectToMainGame() {
+        setTimeout(function() {window.location.href = '/main_game';}, 5000);
+        }
+        window.onload = redirectToMainGame;
+    </script>
+</head>
+<body>
+    <div class="content">
+        <h1>Вы вошли под своим аккаунтом {{authorized_user}}</h1>
+        <button onclick="window.location.href='/main_game'">Вперед</button>
+    </div>
+</body>
+</html>

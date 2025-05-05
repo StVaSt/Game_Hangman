@@ -1,0 +1,85 @@
+html, body {
+    height: auto;
+    weight: auto;
+    margin: 0;
+    background-image: url('background.jpg');
+    background-repeat: repeat;
+    background-size: auto;
+    font-style: italic;
+    }
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content {
+    text-align: center;
+    font-size: 25px;
+    font-weight: 600;
+    max-width: 100%;
+    max-width: none;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.empty_element {
+    font-size: 50px;
+}
+
+.result {
+    font-size: 50px;
+    color: red;
+    font-weight: 600;
+
+}
+
+.error {
+    font-size: 18px;
+    font-weight: 600;
+    font-style: italic;
+    color: red;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #660099;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #9900CC;
+}
+
+    .letter {
+        display: inline-block;
+        font-size: 20px;
+        padding: 10px;
+        margin: 5px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+    .letter:hover {
+        background-color: #9900CC;
+    }
+
+    .used {
+       background-color: red;
+       color: white;
+       cursor: not-allowed;
+   }

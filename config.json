@@ -1,0 +1,8 @@
+   {
+       "database": {
+           "uri": "mysql+pymysql://root:qwerty@127.0.0.1:7777/hangman"
+       },
+       "secret": {
+           "key": "GaMeHaNgMaN"
+       }
+   }
