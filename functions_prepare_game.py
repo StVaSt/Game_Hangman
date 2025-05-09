@@ -1,6 +1,6 @@
 from werkzeug.security import generate_password_hash, check_password_hash
 from models import UsersHangman, WordsHangman, CookiesHangman
-from flask import request, render_template, make_response
+from flask import request, render_template
 from datetime import datetime, timedelta
 from functions_process_game import process_play
 import random
@@ -8,7 +8,7 @@ import string
 import re
 from database import db
 from error_templates import cookie_error_template, add_word_error_template, authorization_error_template, registration_error_template
-
+from ok_templates import registration_ok, authorization_ok, add_word_ok
 
 
 
@@ -28,7 +28,7 @@ def register_user(login, password):
 
     add_user(login, password)
 
-    return render_template("registration_ok.html")
+    return registration_ok()
 
 def search_registration_login(login):
     existing_user = UsersHangman.query.filter_by(login=login).first()
@@ -59,14 +59,11 @@ def authorize_user(login, password):
 
     cookie_value = value_generating()
 
-    response = make_response(render_template("authorization_ok.html", authorized_user=login))
-    response.set_cookie("user_login", cookie_value, max_age=60*60*24*5)
-
     validity_period = datetime.now() + timedelta(days=5)
 
     add_cookie(login, cookie_value, validity_period)
 
-    return response
+    return authorization_ok(login, cookie_value)
 
 def search_authorization_login(login):
     existing_user = UsersHangman.query.filter_by(login=login).first()
@@ -99,7 +96,7 @@ def add_new_word(word, description):
 
     add_word(word, description)
 
-    return render_template("add_word_ok.html")
+    return add_word_ok()
 
 def word_search(word):
     existing_word = WordsHangman.query.filter_by(word=word).first()
