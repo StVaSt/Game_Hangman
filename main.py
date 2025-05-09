@@ -48,15 +48,16 @@ def rules():
     return render_template("rules.html")
 
 
+
 @app.route("/main_game")
 def main_game():
-    value_cookie_client = request.cookies.get("user_login")
-    return check_cookie("main_game", value_cookie_client)
+    cookie_from_client = request.cookies.get("user_login")
+    return check_cookie("main_game", cookie_from_client)
 
 @app.route("/add_word")
 def add_word():
-    value_cookie_client = request.cookies.get("user_login")
-    return check_cookie("add_word",value_cookie_client)
+    cookie_from_client = request.cookies.get("user_login")
+    return check_cookie("add_word",cookie_from_client)
 
 @app.route("/new_word", methods=["POST"])
 def new_word():
@@ -66,13 +67,13 @@ def new_word():
 
 @app.route("/statistics")
 def statistics():
-    value_cookie_client = request.cookies.get("user_login")
-    return check_cookie("statistics", value_cookie_client)
+    cookie_from_client = request.cookies.get("user_login")
+    return check_cookie("statistics", cookie_from_client)
 
 @app.route("/play")
 def play():
-    value_cookie_client = request.cookies.get("user_login")
-    return check_cookie("play", value_cookie_client)
+    cookie_from_client = request.cookies.get("user_login")
+    return check_cookie("play", cookie_from_client)
 
 @app.route("/guess", methods=["POST"])
 def guess():
