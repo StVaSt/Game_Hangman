@@ -113,12 +113,12 @@ def add_word(word, description):
 # === Функция check_cookie и вытекающие из нее===
 def check_cookie(route, cookie_from_client):
     if not cookie_from_client:
-        return cookie_error_template("cookie_error")
+        return cookie_error_template("cookie error")
 
     cookie_from_database = get_cookie_from_database(cookie_from_client)
 
     if not cookie_from_database:
-        return cookie_error_template("cookie_error")
+        return cookie_error_template("cookie error")
 
     validity_period = get_validity_period(cookie_from_database)
     login = get_login(cookie_from_database)
@@ -126,7 +126,7 @@ def check_cookie(route, cookie_from_client):
     current_time = datetime.now()
 
     if validity_period <= current_time:
-        return cookie_error_template("cookie_error")
+        return cookie_error_template("cookie error")
 
     if route == "main_game":
         return process_main_game()
